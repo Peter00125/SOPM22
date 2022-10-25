@@ -3,7 +3,6 @@
 
 <head>
   <title>To Do List</title>
-  <meta name="description" content="website description" />
   <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
@@ -18,18 +17,19 @@
       <div id="menubar">
         <ul id="menu">
           <li class="selected"><a href="Home.html">Home</a></li>
-          <li><a href="contact.html">Contact</a></li>
           <li><a href="aboutus.html">About Us</a></li>
+		  <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
     <div id="site_content">
       <div class="sidebar">
-         <h1>News</h1>
+        <h1>News</h1>
         <h4>This year</h4>
         <h5>5 December 2022</h5>
         <p>Its the day the beta starts</p>	
-		<h5>15 December 2022</h5>
+		<h4>Next Year</h4>
+		<h5>23 January 2023</h5>
         <p>Its the day the day the app is available to everyone</p>	
        </div>
       <div id="content">
@@ -44,40 +44,13 @@
       </div>
     </div>
   </div>
-    <!-- Display the countdown timer in an element -->
-<p id="demo"></p>
-
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-</script>
 
 
+
+<div id="footer">
+    <p<p>@ToDoList 2022 <br>
+    </div>
+  </div>
+  
 </body>
 </html>
