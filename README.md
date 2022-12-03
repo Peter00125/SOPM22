@@ -1,4 +1,4 @@
 # SOPM22
-Sopm
- In fisierul src este partea de react la care lucram impreuna!
- Iar celalalt fisier este site-ul in html
+ - In fisierul src este site-ul in varianta react!
+ - In fisierul sopm2 este site-ul in varianta html!
+ 
