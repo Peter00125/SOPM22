@@ -1,12 +1,16 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
+import projImg1 from "../assets/img/github.png";
+import projImg2 from "../assets/img/expogo.png";
+import projImg3 from "../assets/img/react.png";
+import projImg4 from "../assets/img/visual.png";
 import imgPeter from "../assets/img/peter.png";
 import imgLaura from "../assets/img/laura.png";
 import imgAlexandra from "../assets/img/alexandra.png";
 import imgMihail from "../assets/img/mihail.png";
+import imgss1 from "../assets/img/ss1.png";
+import imgss3 from "../assets/img/ss3.png";
+import imgss5 from "../assets/img/ss5.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 
@@ -14,29 +18,28 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "Visual Studio Code",
+      description: "Used as a code editor for development, debugging and task running",
+      imgUrl: projImg4,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Expo Go ",
+      description: "Used for code and running projects on browser and phones",
       imgUrl: projImg2,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "React Native",
+      description: "Used for building user interfaces",
       imgUrl: projImg3,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "",
+      description: "",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
+      title: "GitHub",
+      description: "Used for team communication and project sharing",
+      imgUrl: projImg1,
     },
 
   ];
@@ -68,6 +71,24 @@ export const Projects = () => {
     },
 
   ];
+
+
+  const ScreenShots = [
+    
+    {
+      title: "Home screen",
+      imgUrl: imgss1
+    },
+    {
+      title: "Welcome Screen",
+      imgUrl: imgss3
+    },
+    {
+      title: "Add tasks Screen",
+      imgUrl: imgss5
+    },
+  ]
+ 
   return (
     <section className="project" id="project">
       <Container>
@@ -118,6 +139,18 @@ export const Projects = () => {
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
+                    <Row>
+                        { 
+                          ScreenShots.map((project, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...project}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
                     </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
@@ -129,3 +162,4 @@ export const Projects = () => {
     </section>
   )
 }
+
