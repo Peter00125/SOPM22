@@ -23,13 +23,14 @@ const Form = ({setInputText, todos, setTodos, inputText, setStatus}) => {
             <input value={inputText} onChange={inputTextHandler} type="text" className="to-do input" />
             <button onClick={submitTodoHandler} className={`todo-button ${!inputText ? 'disabled' : ''}`} type="submit"
               disabled={!inputText}>
-                <i className="fas fa-plus-square"></i>
+                <i className="fa-solid fa-circle-plus"></i>
             </button>
             <div className="select">
                 <select onChange={statusHandler} name="todos" className="filter-todo">
                     <option value="all">All</option>
                     <option value="completed">Completed</option>
                     <option value="uncompleted">Uncompleted</option>
+                    <option value="priority">Priority</option>
                 </select>
             </div>
         </form>
