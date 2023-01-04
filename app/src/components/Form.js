@@ -8,9 +8,6 @@ const Form = ({setInputText, todos, setTodos, inputText, setStatus}) => {
     
     const submitTodoHandler = (e) =>{
         e.preventDefault();
-        if (!inputText) {
-            alert('Nu ai introdus niciun ToDO!');
-            return; }
         setTodos([
         ...todos, {text:inputText, completed:false,id: Math.random()*1000}
         ]);
@@ -24,7 +21,8 @@ const Form = ({setInputText, todos, setTodos, inputText, setStatus}) => {
     return (
         <form>
             <input value={inputText} onChange={inputTextHandler} type="text" className="to-do input" />
-            <button onClick={submitTodoHandler} className="todo-button" type="submit">
+            <button onClick={submitTodoHandler} className={`todo-button ${!inputText ? 'disabled' : ''}`} type="submit"
+              disabled={!inputText}>
                 <i className="fas fa-plus-square"></i>
             </button>
             <div className="select">
