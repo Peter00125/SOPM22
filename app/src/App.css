@@ -47,7 +47,9 @@ form button:hover {
   min-width: 30%;
   list-style: none;
 }
-
+.todo-button.disabled {
+  color: gray;
+}
 .todo {
   margin: 0.5rem;
   background: white;
