@@ -10,7 +10,6 @@ import {
 import React from 'react';
 import colors from './Colors';
 import { AntDesign } from '@expo/vector-icons';
-import tempData from './tempData.js';
 import TodoList from './components/TodoList.js';
 import AddList from './components/AddList.js';
 import Fire from './Fire.js'
@@ -52,15 +51,15 @@ export default class App extends React.Component {
   };
 
   addList = list =>{
-    this.setState({lists: [...this.state.lists, {...list, id: this.state.lists.lenght +1, todos:[]}]});
+   firebase.addList({
+    name: list.name,
+    color: list.color,
+    todos: []
+   })
   };  
 
   updateList = list =>{
-    this.setState({
-      lists: this.state.lists.map(item =>{
-        return item.id === list.id ? list :item;
-      })
-    })
+    firebase.updateList(list);
   };
 
   render() {

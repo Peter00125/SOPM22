@@ -9,10 +9,13 @@ import {
   FlatList,
   KeyboardAvoidingView,
   TextInput,
-  Keyboard
+  Keyboard,
+  Animated
 } from 'react-native';
 import { AntDesign, Ionicons } from '@expo/vector-icons';
 import colors from '../Colors';
+import { Swipeable } from 'react-native-gesture-handler';
+
 
 export default class TodoModal extends React.Component {
   state = {
@@ -38,6 +41,7 @@ export default class TodoModal extends React.Component {
 
   renderTodo = (todo, index) => {
     return (
+      <Swipeable renderRightActions={(_, dragX)=> this.rightActions(dragX, index)}>
       <View style={styles.todoContainer}>
         <TouchableOpacity onPress={() => this.toggleTodoCompleted(index)}>
           <Ionicons
@@ -58,8 +62,21 @@ export default class TodoModal extends React.Component {
           {todo.title}
         </Text>
       </View>
+      </Swipeable>
     );
   };
+
+  rightActions = (dragX, index) =>{
+    return (
+      <TouchableOpacity>
+        <Animated.View>
+          <Animated.Text>
+            Delete
+          </Animated.Text>
+        </Animated.View>
+      </TouchableOpacity>
+    )
+  }
 
   render() {
     const list = this.props.list;
