@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "todobun",
-    "slug": "todobun",
+    "name": "CatCheck2",
+    "slug": "CatCheck2",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
